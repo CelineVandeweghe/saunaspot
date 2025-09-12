@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  defer
+></script>
+
+  <title>SaunaSpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <div class="top-banner">Bekend van SBS6 - <strong>SaunaSpot: </strong>Ontdek, vergelijk en ontspan!</div>
+    <nav>
+      <ul class="left">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Over SaunaSpot</a></li>
+        <li><a href="">SaunaBase</a></li>
+        <li><a href="#map">Provincies</a></li>
+      </ul>
+      <div class="logo">
+        <img src="logo-wit.png" alt="Logo">
+      </div>
+      <ul class="right">
+        <li><a href="#search">Zoeken</a></li>
+        <li><a href="#search">Best beoordeeld</a></li>
+        <li><a href="#contacteer">Contact</a></li>
+        <li><a href="https://reiskriebels.tv/" target="_blank">Onderdeel van Reiskriebels</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="video-section">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Je browser ondersteunt geen HTML5 video.
+      </video>
+      <div class="overlay"></div>
+      <div class="video-info">
+        <div class="left2">
+          <h1>Wat is Sauna Spot?</h1>
+          <p><strong>SaunaSpot </strong>is hét platform waar je alle sauna’s en wellnesslocaties in Nederland kunt ontdekken en vergelijken.
+            <br><br>Hier vind je eerlijke reviews, prachtige foto’s en handige informatie over faciliteiten, prijzen en sfeer. Elke sauna wordt persoonlijk bezocht en <strong>beoordeeld door Rick en Patrizia</strong>, zodat je altijd een betrouwbare indruk krijgt. 
+            <br><br>Met overzichtelijke sterrenratings per categorie weet je precies wat je kunt verwachten. Of je nu op zoek bent naar luxe wellness of een knusse, kleinschalige sauna: SaunaSpot helpt je de perfecte plek te vinden voor ultieme ontspanning.  </p>
+        </div>
+        <div class="container">
+          <img src="team.jpg" alt="Rick & Patrizia" class="foto-cirkel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+    <div class="search-container">
+      <h2>Zoek een sauna</h2>
+      <input type="text" id="search" placeholder="Naam of locatie..." list="suggesties" />
+      <datalist id="suggesties">
+        <option value="Thermen Bussloo">
+        <option value="SpaPuur">
+        <option value="Elysium">
+        <option value="Fontana">
+        <option value="Thermen Berendonck">
+      </datalist>
+
+      <div class="filters">
+        <label><input type="checkbox" id="zwembad" /> Zwembad</label>
+        <label><input type="checkbox" id="massage" /> Massagefaciliteiten</label>
+      </div>
+
+      <div class="slider-container">
+        <label for="sterren">Minimum aantal sterren:</label>
+        <span id="sterren-waarde" class="stars">☆☆☆☆☆</span>
+      </div>
+              <input type="range" id="sterren" min="0" max="5" step="1" value="0" />
+
+      <button class="zoekknop" onclick="zoekSauna()">Zoeken</button>
+      <div id="resultaten"></div>
+
+      <div class="blog">
+        <a href="">
+          <div class="blog-overlay">
+            <img src="blog.jpg" alt="blog" class="fotoblog"/>
+            <div class="overlay"></div>
+            <p>Bezoek blog van Rick & Patrizia</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <section class="reiskriebels-banner">
+    <a href="https://reiskriebels.tv/" target="_blank"><img src="reiskriebels.jpg" alt="Bekijk Reiskriebels" id="reiskriebels"/></a>
+  </section>
+
+  <section class="sauna-logos">
+    <img src="logo1.jpg" alt="Sauna 1" />
+    <img src="logo2.jpg" alt="Sauna 2" />
+    <img src="logo3.jpg" class="logo3" alt="Sauna 3" />
+    <img src="logo4.jpg" class="logo4" alt="Sauna 4" />
+    <img src="logo5.jpg" alt="Sauna 5" />
+  </section>
+
+  <section class="ebook-contact">
+    <div class="ebook">
+      <h2>Download ons e-book</h2>
+      <p>Download hier ons <strong>exclusieve e-book</strong> en ontdek de <strong>allerbeste saunaplekken</strong> in heel Nederland! Ontvang handige tips, insider-aanbevelingen en inspirerende locaties zodat je jouw perfecte wellness-ervaring kunt plannen.<br><br>Mis deze kans niet om van ultieme ontspanning te genieten!</p>
+    </div>
+    <div class="cover">
+      <a href=""><img src="ebook.jpg" alt="ebook"/></a>
+    </div>
+    <div class="contact">
+      <h2 id="contacteer">Contacteer ons</h2>
+      <p>Heb je vragen, tips of wil je gewoon even contact opnemen? Bij SaunaSpot staan we altijd klaar om je te helpen! <br>Stuur ons een berichtje, en we reageren zo snel mogelijk. Jouw ervaring en feedback zijn belangrijk voor ons.</p>
+      <button class="zoekknop">Contacteer SaunaSpot</button>
+    </div>
+  </section>
+
+  <footer>
+    Website gemaakt door <a href="https://www.crazy-lemon.com" target="_blank">Crazy Lemon Designs</a></strong>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaunaSpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <div class="top-banner">Bekend van SBS6 - <strong>SaunaSpot: </strong>Ontdek, vergelijk en ontspan!</div>
+    <nav>
+      <ul class="left">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Over SaunaSpot</a></li>
+        <li><a href="">SaunaBase</a></li>
+        <li><a href="index.html#map">Provincies</a></li>
+      </ul>
+      <div class="logo">
+        <img src="logo-wit.png" alt="Logo">
+      </div>
+      <ul class="right">
+        <li><a href="index.html#search">Zoeken</a></li>
+        <li><a href="index.html#search">Best beoordeeld</a></li>
+        <li><a href="index.html#contacteer">Contact</a></li>
+        <li><a href="https://reiskriebels.tv/" target="_blank">Onderdeel van Reiskriebels</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="detail">
+
+    <h1 id="sauna-naam">Sauna Naam</h1>
+    <p><strong>📍 Locatie:</strong> <span id="locatie">...</span></p>
+    <p><strong>🧖‍♀️ Faciliteiten:</strong> <span id="faciliteiten">...</span></p>
+    <p><strong>⭐ Beoordeling:</strong> <span id="sterren">...</span> sterren</p><br>
+    <p><em>Persoonlijk beoordeeld door Rick & Patrizia</em></p><br>
+
+    <img src="sauna-foto.jpg" alt="Foto van sauna" class="sauna-foto" />
+
+    <blockquote>
+      “Een oase van rust en warmte. Perfect voor een dagje ontspanning.”<br />
+      <span class="quote-author">– Rick & Patrizia</span>
+    </blockquote>
+        <button class="back-button" onclick="window.history.back()">Terug naar overzicht</button>
+  </main>
+
+  <footer>
+    Website gemaakt door <a href="https://www.crazy-lemon.com" target="_blank">Crazy Lemon Designs</a></strong>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const naam = params.get("naam") || "Onbekend";
+    const locatie = params.get("locatie") || "Niet gespecificeerd";
+    const zwembad = params.get("zwembad") === "true";
+    const massage = params.get("massage") === "true";
+    const sterren = params.get("sterren") || "n.v.t.";
+
+    document.getElementById("sauna-naam").textContent = naam;
+    document.getElementById("locatie").textContent = locatie;
+    document.getElementById("faciliteiten").textContent =
+      `${zwembad ? "Zwembad" : ""}${zwembad && massage ? " & " : ""}${massage ? "Massagefaciliteiten" : ""}` || "Basis";
+    document.getElementById("sterren").textContent = sterren === "0" ? "n.v.t." : sterren;
+  </script>
+</body>
+</html>

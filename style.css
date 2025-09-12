@@ -1,0 +1,479 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: white
+}
+
+nav ul a:hover {
+  opacity: 0.75;
+}
+
+.top-banner {
+  background-color: #5c8d69;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #774821;
+}
+
+nav ul {
+  display: flex;
+  gap: 4vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+  font-size: 0.8em;
+}
+
+h1{
+    font-family: 'Libre Baskerville', serif;
+}
+
+h2{
+    font-family: 'Libre Baskerville', serif;
+}
+
+.left {
+  margin-left: 5vw
+}
+
+.right {
+  margin-right: 5vw
+}
+
+nav .logo img {
+  height: 70px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* video vult hele schermhoogte */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* vult container zonder vervormen */
+  transform: translate(-50%, -50%);
+  z-index: 0; /* Achtergrond */
+}
+
+.video-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* donkere overlay */
+  z-index: 1;
+}
+
+.video-container .video-info {
+  position: relative !important;
+  z-index: 2 !important; /* boven overlay */
+  color: white !important;
+  top: 40% !important;
+  transform: translateY(-50%) !important;
+  display: flex;
+  justify-content: space-between;
+  padding: 5vw;
+  line-height: 1.5;
+}
+
+.video-container .video-info p {
+  font-size: 0.9em;
+}
+
+.left2{
+  width: 35vw;
+}
+
+.foto-cirkel {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 25vw;
+  border: 3px solid #b7894f;
+}
+
+.content{
+  display: flex;
+  background-color: #fcf5ed45;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+}
+
+.map-container {
+  width: 60%;
+  position: relative;
+  height: 500px;
+  background-color: #e0d4b7;
+  border-radius: 25px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pin {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: #e39d51 !important;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.search-container {
+  width: 40%;
+  padding-left: 2em;
+}
+
+.search-container input, select, button {
+  display: block;
+  margin: 1em 0;
+  padding: 0.5em;
+  width: 90%;
+  background-color: #FCF5ED;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column; /* of row als je ze naast elkaar wilt */
+  gap: 0.5rem;
+}
+
+.filters label {
+  display: flex;
+  align-items: center; /* zorgt dat checkbox en tekst mooi uitlijnen */
+  gap: 1rem; /* ruimte tussen checkbox en tekst */
+  cursor: pointer;
+}
+
+.zoekknop {
+  background-color: #b7894f;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px !important;
+  padding-right:20px !important;
+}
+
+.zoekknop:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.filters input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #b7894f; /* moderne browsers: kleur van checkbox */
+  cursor: pointer;
+}
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 20px 0;
+  }
+
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 87%;
+    height: 4px;
+    background: #FCF5ED;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 20px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #b7894f;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #b7894f;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  .stars {
+    font-size: 1.4rem;
+    color: #b7894f;
+    min-width: 7ch; /* ruimte voor 5 sterren */
+  }
+
+.verbergen {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card h4 {
+  margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.card p {
+  margin: 0.3rem 0;
+}
+
+.card .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: #b7894f;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.card .btn:hover {
+  opacity: 0.9
+}
+
+.no-results {
+  color: #774821;
+  margin-top: 1rem;
+}
+
+.blog {
+  position: relative;
+  width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 16.5vh;
+    border: 3px solid #b7894f;
+}
+
+.fotoblog {
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.blog .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* donkere overlay */
+  z-index: 1;
+}
+
+.blog p {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  margin: 0;
+  color: #fff;
+      font-family: 'Libre Baskerville', serif;
+  z-index: 2;
+}
+
+.blog:hover {
+  opacity: 0.9;
+}
+
+
+.reiskriebels-banner img {
+  width: 100%;
+  margin-bottom: 10vh;
+}
+
+.reiskriebels-banner img:hover {
+  opacity: 0.9
+}
+
+.sauna-logos {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+  margin-bottom: 10vh;
+}
+
+.sauna-logos img {
+  width: auto;
+  height: 10vh;
+}
+
+.logo3{
+  height: 12vh !important;
+}
+
+.logo4{
+  margin-top: 2vh;
+  height: 6vh !important;
+}
+
+.ebook-contact {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0d4b7;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.ebook a {
+  font-size: 1.2em;
+  color: #5c3d2e;
+  text-decoration: none;
+}
+
+.ebook{
+  margin-left: 5vw;
+  width: 30vw;
+}
+
+.cover {
+  width: 20vw;
+  margin-right: 2vw;
+}
+
+.cover img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cover img:hover {
+  opacity: 0.9
+}
+
+.contact {
+  width: 30vw;
+  margin-right: 5vw;
+}
+
+footer {
+  background-color: #5c3d2e;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.detail {
+  padding: 2em;
+  max-width: 60vw;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.back-button {
+  background-color: #b7894f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 30%
+}
+
+.back-button:hover{
+  opacity: 0.9
+}
+
+.sauna-foto {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 1em;
+    object-fit: cover;
+    height: 50vh
+}
+
+blockquote {
+  margin-top: 1.5em;
+  font-style: italic;
+  background-color: #FCF5ED;
+  padding: 1em;
+  border-left: 8px solid #b7894f;
+  border-radius: 10px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  width: 95%;
+  margin-top: 50px;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 0.5em;
+  font-weight: bold;
+  color: #5c3d2e;
+}
