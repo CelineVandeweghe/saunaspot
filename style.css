@@ -1,18 +1,17 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Barlow', sans-serif;
   background-color: white;
   color: black;
-  overflow-x: hidden;
 }
 
 nav ul a {
   text-decoration: none;
-  color: white
+  color: black
 }
 
 nav ul a:hover {
-  opacity: 0.75;
+  opacity: 0.5;
 }
 
 .top-banner {
@@ -23,11 +22,20 @@ nav ul a:hover {
   font-size: 0.8em;
 }
 
+.logo {
+  filter: invert(1);
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #774821;
+  background-color: white;
+  position: sticky;
+  top: 0px; 
+  z-index: 1000;
+  height: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 nav ul {
@@ -37,16 +45,8 @@ nav ul {
   padding: 0;
   margin: 0;
   font-family: 'Libre Baskerville', serif;
-  color: white;
-  font-size: 0.8em;
-}
-
-h1{
-    font-family: 'Libre Baskerville', serif;
-}
-
-h2{
-    font-family: 'Libre Baskerville', serif;
+  color: black;
+  font-size: 1em;
 }
 
 .left {
@@ -67,7 +67,7 @@ nav .logo img {
 .video-container {
   position: relative;
   width: 100%;
-  height: 85vh; /* video vult hele schermhoogte */
+  height: 55vh; 
   overflow: hidden;
 }
 
@@ -96,7 +96,7 @@ nav .logo img {
   position: relative !important;
   z-index: 2 !important; /* boven overlay */
   color: white !important;
-  top: 40% !important;
+  top: 50% !important;
   transform: translateY(-50%) !important;
   display: flex;
   justify-content: space-between;
@@ -372,7 +372,7 @@ nav .logo img {
 .ebook-contact {
   display: flex;
   justify-content: space-between;
-  background-color: #e0d4b7;
+  background-color: #e0d4b753;
   padding-top: 10vh;
   padding-bottom: 10vh;
 }
@@ -476,4 +476,27 @@ blockquote {
   margin-top: 0.5em;
   font-weight: bold;
   color: #5c3d2e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Serif', serif !important;
+}
+
+.zoekknop,
+.card .btn,
+.back-button {
+  padding: 14px 30px !important;
+  border-radius: 30px !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 1rem !important;
+  display: inline-block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+
+.search-container button {
+  padding: 14px 30px !important;
+  border-radius: 30px !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 1rem !important;
 }
